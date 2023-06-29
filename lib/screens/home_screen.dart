@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:carpool_app/services/firebase_service.dart';
+import 'package:uagrm_app/services/firebase_service.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -27,17 +27,26 @@ class _HomeScreenState extends State<HomeScreen> {
     super.dispose();
   }
 
-  _onSearchChanged() {
-    if (_filter.text.isEmpty) {
-      setState(() {
-        _searchResult = null;
+_onSearchChanged() {
+  if (_filter.text.isEmpty) {
+    setState(() {
+      _searchResult = null;
+    });
+  } else {
+    setState(() {
+      _searchResult = _auth.buscarPorPuntoFinal(_filter.text);
+      _searchResult!.listen((QuerySnapshot snapshot) {
+        snapshot.docs.forEach((doc) {
+          Map<String, dynamic> data = doc.data() as Map<String, dynamic>;
+          if (data['puntoFinal'] == _filter.text) {
+            print(data);
+          }
+        });
       });
-    } else {
-      setState(() {
-        _searchResult = _auth.buscarPorPuntoFinal(_filter.text);
-      });
-    }
+    });
   }
+}
+
 
   @override
   Widget build(BuildContext context) {
@@ -143,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(child: CircularProgressIndicator());
-        }
+        } 
 
         return ListView(
           children: snapshot.data!.docs.map((DocumentSnapshot document) {

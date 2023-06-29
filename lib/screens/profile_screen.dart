@@ -1,4 +1,4 @@
-import 'package:carpool_app/services/firebase_service.dart';
+import 'package:uagrm_app/services/firebase_service.dart';
 import 'package:flutter/material.dart';
 String _vehiclePlaca = '';
 class ProfileScreen extends StatefulWidget {
@@ -27,7 +27,7 @@ class ProfileScreenState extends State<ProfileScreen> {
         _vehiclePlaca = placa;
       });
     } catch (e) {
-      // Manejo de errores
+     
     }
   }
   @override

@@ -31,7 +31,6 @@ class FirebaseService {
 
 
 
-  // have to work on this function to get role of the current logged in user
   Future<Map> getFullName() async {
     print(currentUserRole);
     var data = await _firestoredb
@@ -78,7 +77,6 @@ class FirebaseService {
         .doc(_auth.currentUser!.uid)
         .collection("requests");
 
-    // to handle rejeceted request test case
     if (docQuery.docs.isEmpty) {
       riderRequestcollectionReference
           .doc("DUNAVAILABLE")
@@ -96,7 +94,6 @@ class FirebaseService {
       }
     }
 
-    // to use this variables for storing document in both driver and rider requests collection
     DocumentReference documentReference = docQuery.docs[0].reference;
     String driverDocumentID = documentReference.id;
 
@@ -104,7 +101,6 @@ class FirebaseService {
         documentReference.collection("requests");
     String currentTime = DateTime.now().toString();
 
-    // error handling and storing request document in both rider's and driver's requests collection
     try {
       await driverRequestsCollection.doc(_auth.currentUser!.uid).set({
         "riderId": _auth.currentUser!.uid,
@@ -169,32 +165,24 @@ class FirebaseService {
 
 
 Future<String> getUserProfileImageURL() async {
-  // Checks if the user is authenticated
   if (_auth.currentUser == null) {
     throw Exception('User not authenticated');
   }
 
-  // Retrieves user's document from Firestore
   DocumentSnapshot<Map<String, dynamic>>? documentSnapshot = await _firestoredb
       .collection("users")
       .doc(_auth.currentUser!.uid)
       .get();
 
-  // Checks if the document exists
   if (documentSnapshot != null && documentSnapshot.exists) {
-    // Retrieves the data as a Map<String, dynamic>
     Map<String, dynamic> userData = documentSnapshot.data()!;
 
-    // Checks if the 'imageUrl' field exists in the document
     if (userData.containsKey('imageUrl')) {
-      // Returns the value of 'imageUrl'
       return userData['imageUrl'];
     } else {
-      // Throws an error if 'imageUrl' doesn't exist
       throw Exception('imageUrl not found in the user document');
     }
   } else {
-    // Throws an error if the document doesn't exist
     throw Exception('User document not found');
   }
 }
@@ -246,12 +234,12 @@ Future<String> getUserProfileImageURL() async {
   }
 }
 
-  Stream<QuerySnapshot<Map<String, dynamic>>> buscarPorPuntoFinal(String puntoFinal) {
-    return _firestoredb
-        .collection('rutas')
-        .where('puntoFinal', isEqualTo: puntoFinal)
-        .snapshots();
-  }
+Stream<QuerySnapshot<Map<String, dynamic>>> buscarPorPuntoFinal(String puntoFinal) {
+  return _firestoredb
+      .collection('rutas')
+      .snapshots();
+}
+
 Stream<QuerySnapshot> searchByEnd(String end) {
     return _firestoredb
         .collection('rutas')
@@ -335,32 +323,24 @@ Future<String> getVehiclePlaca() async {
 
 
 Future<String> getVehicleImageURL() async {
-    // Checks if the user is authenticated
     if (_auth.currentUser == null) {
       throw Exception('User not authenticated');
     }
 
-    // Retrieves user's document from Firestore
     DocumentSnapshot<Map<String, dynamic>>? documentSnapshot = await _firestoredb
         .collection("vehiculos")
         .doc(_auth.currentUser!.uid)
         .get();
 
-    // Checks if the document exists
     if (documentSnapshot != null && documentSnapshot.exists) {
-      // Retrieves the data as a Map<String, dynamic>
       Map<String, dynamic> userData = documentSnapshot.data()!;
 
-      // Checks if the 'imageUrl' field exists in the document
       if (userData.containsKey('imageUrl')) {
-        // Returns the value of 'imageUrl'
         return userData['imageUrl'];
       } else {
-        // Throws an error if 'imageUrl' doesn't exist
         throw Exception('imageUrl not found in the user document');
       }
     } else {
-      // Throws an error if the document doesn't exist
       throw Exception('User document not found');
     }
   }
@@ -370,15 +350,12 @@ Future<String> getVehicleImageURL() async {
   Future<String> registrarVehiculo(String placa, String marca, String modelo, 
                                     String ano, String capacidad, String carEspecial, String _vehicleImageUrl) async {
     try {
-      // Revisa si el usuario actual es nulo
       if (_auth.currentUser == null) {
         throw Exception('Usuario no autenticado');
       }
 
-      // Crea una referencia al documento en la colección 'vehiculos' para el usuario actual
       DocumentReference docRef = _firestoredb.collection('vehiculos').doc(_auth.currentUser!.uid);
 
-      // Crea un objeto para representar los datos del vehículo
       Map<String, dynamic> vehiculo = {
         'placa': placa,
         'marca': marca,
@@ -386,7 +363,7 @@ Future<String> getVehicleImageURL() async {
         'ano': ano,
         'capacidad': capacidad,
         'carEspecial': carEspecial,
-        'imageUrl': _vehicleImageUrl,  // Save image URL to Firestore
+        'imageUrl': _vehicleImageUrl, 
       };
 
       // Guarda los datos en Firestore
@@ -404,7 +381,7 @@ Future<String> getVehicleImageURL() async {
 
 Future signUp(BuildContext context, String firstName, String lastName, String registro,
     String celular, String carrera,
-    String email, String password, String imageUrl, String role) async {  // Agregar 'imageUrl' aquí
+    String email, String password, String imageUrl, String role) async {  
   print("Sign Up!");
 
   try {
@@ -430,7 +407,7 @@ Future signUp(BuildContext context, String firstName, String lastName, String re
         "role": role,
         "timestamp": timestamp,
         "userId": userCredential.user?.uid ?? v1,
-        "imageUrl": imageUrl,  // Agrega 'imageUrl' aquí
+        "imageUrl": imageUrl,  
       };
     } else {
       userObj = {
@@ -443,7 +420,7 @@ Future signUp(BuildContext context, String firstName, String lastName, String re
         "role": role,
         "timestamp": timestamp,
         "userId": userCredential.user?.uid ?? v1,
-        "imageUrl": imageUrl,  // Agrega 'imageUrl' aquí
+        "imageUrl": imageUrl,  
       };
     }
 

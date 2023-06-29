@@ -25,7 +25,7 @@ class AccountScreenState extends State<AccountScreen> {
   }
 
   Future<List<RouteData>> obtenerCantidadDeRutasUsuario() async {
-    String currentUserId = FirebaseAuth.instance.currentUser!.uid; // Replace with the actual current user ID
+    String currentUserId = FirebaseAuth.instance.currentUser!.uid; 
     List<int> counts = await obtenerCountsRutasUsuario(currentUserId);
 
     List<RouteData> routeData = [];
@@ -49,7 +49,7 @@ class AccountScreenState extends State<AccountScreen> {
     for (int i = 6; i >= 0; i--) {
       DateTime date = now.subtract(Duration(days: i));
 
-      // Realiza una consulta a Firestore para obtener las rutas del usuario en la fecha especificada
+      
       QuerySnapshot snapshot = await FirebaseFirestore.instance
           .collection('rutas')
           .where('usuarioId', isEqualTo: userId)
@@ -90,8 +90,8 @@ class AccountScreenState extends State<AccountScreen> {
     final heightSize = MediaQuery.of(context).size.height;
 
     return Container(
-      height: heightSize, // Establece la altura del contenedor para centrar el gráfico verticalmente
-      color: Color(0xFFEEEEEE), // Establece el color de fondo del contenedor
+      height: heightSize, 
+      color: Color(0xFFEEEEEE), 
       child: Center(
         child: SizedBox(
           width: widthSize,
@@ -99,7 +99,7 @@ class AccountScreenState extends State<AccountScreen> {
             primaryXAxis: CategoryAxis(),
             series: <ChartSeries>[
               ColumnSeries<RouteData, String>(
-                color: Color(0xFFFF1522), // Establece el color de las columnas
+                color: Color(0xFFFF1522), 
                 dataSource: data,
                 xValueMapper: (RouteData route, _) => route.dayOfWeek,
                 yValueMapper: (RouteData route, _) => route.routeCount,

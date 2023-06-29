@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:carpool_app/services/map_screen_provider.dart';
+import 'package:uagrm_app/services/map_screen_provider.dart';
 import 'package:provider/provider.dart';
 
 Widget MapNewRiderRejectedRequestWidget(BuildContext context, double heightSize) {

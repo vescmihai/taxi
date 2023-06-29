@@ -1,6 +1,6 @@
-import 'package:carpool_app/screens/map_screen.dart';
-import 'package:carpool_app/screens/search_autocomplete_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:uagrm_app/screens/map_screen.dart';
+import 'package:uagrm_app/screens/search_autocomplete_screen.dart';
 
 class DriveScreen extends StatefulWidget {
   DriveScreen();
@@ -18,19 +18,6 @@ class DriveScreenState extends State<DriveScreen> {
     final widthSize = MediaQuery.of(context).size.width;
     final heightSize = MediaQuery.of(context).size.height;
 
-    final ButtonStyle raisedButtonStyle = ElevatedButton.styleFrom(
-      onPrimary: Colors.white,
-      primary: const Color(0xFFFF1522),
-      minimumSize: Size(widthSize * 0.3, heightSize * 0.04),
-      padding: EdgeInsets.symmetric(
-        horizontal: widthSize * 0.07,
-        vertical: heightSize * 0.02,
-      ),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30),
-      ),
-    );
-
     return Scaffold(
       extendBodyBehindAppBar: true,
       backgroundColor: Color(0xFFEEEEEE),
@@ -41,7 +28,6 @@ class DriveScreenState extends State<DriveScreen> {
       ),
       body: Column(
         children: [
-          //SizedBox(height: heightSize * 0.1),
           Image.network(
             'https://media.tenor.com/y8BqGzWtqSAAAAAi/explore-map.gif',
             width: widthSize * 0.8,
@@ -87,8 +73,7 @@ class DriveScreenState extends State<DriveScreen> {
                   controller: _destination,
                   onTap: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) =>
-                          SearchAutoCompleteScreen(_destination),
+                      builder: (context) => SearchAutoCompleteScreen(_destination),
                     ));
                   },
                   style: TextStyle(fontSize: heightSize * 0.022),

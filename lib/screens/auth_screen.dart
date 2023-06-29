@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:carpool_app/screens/signup_screen.dart';
-import 'package:carpool_app/screens/signin_screen.dart';
+import 'package:uagrm_app/screens/signup_screen.dart';
+import 'package:uagrm_app/screens/signin_screen.dart';
 
 class AuthScreen extends StatefulWidget {
   final String role;
@@ -27,8 +27,7 @@ class _AuthScreenState extends State<AuthScreen> {
       body: Stack(
         children: [
           PageView(
-            /// [PageView.scrollDirection] defaults to [Axis.horizontal].
-            /// Use [Axis.vertical] to scroll vertically.
+
             controller: controller,
             children: <Widget>[
               SignUpScreen(widget.role),

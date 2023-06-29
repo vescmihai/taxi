@@ -1,5 +1,5 @@
-import 'package:carpool_app/screens/drive_screen.dart';
-import 'package:carpool_app/services/location_services.dart';
+import 'package:uagrm_app/screens/drive_screen.dart';
+import 'package:uagrm_app/services/location_services.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
@@ -91,7 +91,6 @@ class _SearchAutoCompleteScreenState extends State<SearchAutoCompleteScreen> {
         });
         Navigator.of(context).pop();
     } catch (e) {
-        // Maneja cualquier otra excepción
     }
 }
 

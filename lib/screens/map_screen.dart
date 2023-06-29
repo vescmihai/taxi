@@ -1,19 +1,19 @@
 import 'dart:async';
-import 'package:carpool_app/screens/driver_screens/map_new_rider_widget.dart';
-import 'package:carpool_app/screens/rider_screens/map_new_rider_dunavailable_request_widget.dart';
-import 'package:carpool_app/screens/rider_screens/map_new_rider_failed_request_widget.dart';
-import 'package:carpool_app/screens/rider_screens/map_new_rider_rejected_request_widget.dart';
-import 'package:carpool_app/services/firebase_service.dart';
+import 'package:uagrm_app/screens/driver_screens/map_new_rider_widget.dart';
+import 'package:uagrm_app/screens/rider_screens/map_new_rider_dunavailable_request_widget.dart';
+import 'package:uagrm_app/screens/rider_screens/map_new_rider_failed_request_widget.dart';
+import 'package:uagrm_app/screens/rider_screens/map_new_rider_rejected_request_widget.dart';
+import 'package:uagrm_app/services/firebase_service.dart';
 import 'package:flutter/material.dart';
-import 'package:carpool_app/services/location_services.dart';
+import 'package:uagrm_app/services/location_services.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:carpool_app/services/map_screen_provider.dart';
+import 'package:uagrm_app/services/map_screen_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:carpool_app/screens/driver_screens/map_drive_widget.dart';
-import 'package:carpool_app/services/map_metrics_service.dart';
+import 'package:uagrm_app/screens/driver_screens/map_drive_widget.dart';
+import 'package:uagrm_app/services/map_metrics_service.dart';
 import 'driver_screens/map_drive_widget.dart';
 import 'rider_screens/map_new_rider_create_request_widget.dart';
 import 'package:progress_indicators/progress_indicators.dart';
@@ -63,21 +63,21 @@ class MapScreenState extends State<MapScreen> {
     // Test if location services are enabled.
     serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
-      return Future.error('Location services are disabled.');
+      return Future.error('Active los permisos.');
     }
 
     permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
-        return Future.error('Location permissions are denied');
+        return Future.error('Active los permisos');
       }
     }
 
     if (permission == LocationPermission.deniedForever) {
-      // Permissions are denied forever, handle appropriately.
+      
       return Future.error(
-          'Location permissions are permanently denied, we cannot request permissions.');
+          'Active los permisos.');
     }
 
     Position position = await Geolocator.getCurrentPosition(
@@ -221,10 +221,10 @@ class MapScreenState extends State<MapScreen> {
     } else if (currentWidgetState == "ROUTESCREEN") {
       return MapRouteScreen();
     } else if (currentWidgetState == "DRIVESCREEN") {
-      // for drivers
+      
       return decideNewRideDriverScreenWidget(heightSize);
     } else {
-      // for riders: currentWidgetState == RIDESCEEN
+      
       return decideFindRideRiderScreenWidget(heightSize);
     }
   }

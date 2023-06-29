@@ -1,6 +1,6 @@
 import 'dart:collection';
 import 'package:flutter/material.dart';
-import 'package:carpool_app/services/firebase_service.dart';
+import 'package:uagrm_app/services/firebase_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -41,7 +41,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       if (pickedFile != null) {
         _imageFile = File(pickedFile.path);
       } else {
-        print('No image selected.');
+        print('No seleccionaste una imagen.');
       }
     });
   }
@@ -58,7 +58,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           margin: EdgeInsets.only(top: heightSize * 0.02),
           child: SingleChildScrollView(
             child: Form(
-              key: _formKey, // NEW
+              key: _formKey, 
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
@@ -240,7 +240,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 SizedBox(height: heightSize * 0.02),
                   ElevatedButton.icon(
-                    icon: Icon(Icons.app_registration, size: widthSize * 0.06), // Cambia este icono si quieres uno diferente
+                    icon: Icon(Icons.app_registration, size: widthSize * 0.06), 
                     label: Text(
                       'Registrar',
                       style: TextStyle(fontSize: widthSize * 0.05),
@@ -248,7 +248,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     style: ElevatedButton.styleFrom(
                       primary: Color(0xffFF1522),
                       onPrimary: Colors.white,
-                      minimumSize: Size(widthSize * 0.80, heightSize * 0.04), // El mismo tamaño que proporcionaste en el ejemplo
+                      minimumSize: Size(widthSize * 0.80, heightSize * 0.04), 
                       padding: EdgeInsets.symmetric(
                         horizontal: widthSize * 0.10,
                         vertical: heightSize * 0.02,
@@ -258,7 +258,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       ),
                     ),
                     onPressed: () async {
-                      // Validate returns true if the form is valid, or false otherwise.
                       if (_formKey.currentState!.validate()) {
                         if (_imageFile != null) {
                           var snapshot = await _storage.ref().child('profilePics/${_emailController.text}').putFile(_imageFile!);

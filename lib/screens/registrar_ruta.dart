@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
-import 'package:carpool_app/services/firebase_service.dart';
-import 'package:carpool_app/screens/search_autocomplete_screen.dart';
+import 'package:uagrm_app/services/firebase_service.dart';
+import 'package:uagrm_app/screens/search_autocomplete_screen.dart';
 
 class RegistrarRuta extends StatefulWidget {
   @override

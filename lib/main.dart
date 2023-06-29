@@ -1,17 +1,19 @@
-import 'package:carpool_app/services/firebase_service.dart';
-import 'package:carpool_app/services/map_screen_provider.dart';
+import 'package:uagrm_app/services/firebase_service.dart';
+import 'package:uagrm_app/services/map_screen_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:carpool_app/screens/drive_screen.dart';
+import 'package:uagrm_app/screens/drive_screen.dart';
 import 'package:provider/provider.dart';
 import 'screens/base_screen.dart';
 import 'firebase_options.dart';
 import 'screens/launch_screen_options.dart';
-import 'package:carpool_app/screens/auth_screen.dart';
+import 'package:uagrm_app/screens/auth_screen.dart';
 import 'screens/launch_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:carpool_app/screens/registrar_vehiculo.dart';
-import 'package:carpool_app/screens/registrar_ruta.dart';
-import 'package:carpool_app/screens/registrar_brevet.dart';
+import 'package:uagrm_app/screens/registrar_vehiculo.dart';
+import 'package:uagrm_app/screens/registrar_ruta.dart';
+import 'package:uagrm_app/screens/registrar_brevet.dart';
+import 'package:uagrm_app/screens/calificaciones.dart';
+import 'package:uagrm_app/screens/reportes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -52,6 +54,8 @@ class MyApp extends StatelessWidget {
         '/registrar_vehiculo': (context) => RegistrarVehiculo(),
         '/registrar_ruta': (context) => RegistrarRuta(),
         '/registrar_brevet': (context) => RegistrarBrevet(),
+        '/calificaciones': (context) => CalificarViajeScreen(),
+        '/reportes': (context) => ReportScreen(),
       },
     );
   }

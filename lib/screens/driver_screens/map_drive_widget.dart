@@ -1,8 +1,8 @@
-import 'package:carpool_app/services/firebase_service.dart';
+import 'package:uagrm_app/services/firebase_service.dart';
 import 'package:flutter/material.dart';
-import 'package:carpool_app/services/map_screen_provider.dart';
+import 'package:uagrm_app/services/map_screen_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:carpool_app/services/map_metrics_service.dart';
+import 'package:uagrm_app/services/map_metrics_service.dart';
 
 Widget MapDriveWidget(FirebaseService _auth, BuildContext context,
     var directions, double heightSize) {
@@ -109,8 +109,10 @@ Widget MapDriveWidget(FirebaseService _auth, BuildContext context,
                     context
                         .read<MapScreenProvider>()
                         .setCurrentWidgetState("ROUTESCREEN");
+
+                      Navigator.pushNamed(context, '/calificaciones');
                   },
-                  child: Text("Terminar viaje"),
+                  child: Text("Terminar viajee"),
                 ),
               ],
             ),

@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:carpool_app/services/firebase_service.dart';
+import 'package:uagrm_app/services/firebase_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -143,7 +143,6 @@ File? _vehicleImage;
                   },
                 ),
 
-                // Display the selected image
                 _vehicleImage != null
                   ? Image.file(
                       _vehicleImage!,
@@ -174,7 +173,7 @@ File? _vehicleImage;
                   ),
                   onPressed: () async {
                     if (_formKey.currentState!.validate()) {
-                      // upload image
+
                       String? imageUrl = await uploadVehicleImage();
 
                       String result = await _firebaseService.registrarVehiculo(placa, marca, modelo, ano, capacidad.toString(), carEspecial ?? 'Ninguna', imageUrl!);

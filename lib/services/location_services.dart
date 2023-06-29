@@ -5,7 +5,6 @@ import 'dart:convert' as convert;
 class LocationService {
   final String key = 'AIzaSyAWqeXTDh8ANrGorI7lfnfH6Zkt0JgSKe0';
 
-  // currently not being used, this function is just for reference
   Future<Map<String, dynamic>> getPlaceID(String input) async {
     const String url =
         'https://maps.googleapis.com/maps/api/place/details/output?parameters'; // example url

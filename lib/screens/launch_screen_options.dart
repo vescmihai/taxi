@@ -1,4 +1,4 @@
-import 'package:carpool_app/screens/auth_screen.dart';
+import 'package:uagrm_app/screens/auth_screen.dart';
 import 'package:flutter/material.dart';
 
 class LaunchScreenOptions extends StatelessWidget {
@@ -12,10 +12,10 @@ class LaunchScreenOptions extends StatelessWidget {
     Widget buildOptionButton({required String role, required IconData icon, required String text}) {
       return ElevatedButton.icon(
         icon: Icon(icon, size: widthSize * 0.10),
-        label: Column( // Agregamos una columna para tener el ícono y el texto
+        label: Column( 
           children: [
             Text(
-              text, // Usamos el texto personalizado en lugar de role
+              text, 
               style: TextStyle(fontSize: widthSize * 0.05),
             ),
           ],
