@@ -1,0 +1,250 @@
+{
+  "project_info": {
+    "project_number": "273364073286",
+    "project_id": "uber-f2895",
+    "storage_bucket": "uber-f2895.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273364073286:android:4afb46f76caabb4535c347",
+        "android_client_info": {
+          "package_name": "com.dotcoder.green_taxi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273364073286-p6cvn40g2286tiuionhmgbh73oebjcvf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dotcoder.green_taxi",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "273364073286-vc727viu77k8k9afjlrsd6h79lo5t1la.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dotcoder.green_taxi",
+            "certificate_hash": "5e72052f072a8692768bfc3e71badc0d41ec1e07"
+          }
+        },
+        {
+          "client_id": "273364073286-ch01ov4vromu2s05a5sbiip77rp2071t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWqeXTDh8ANrGorI7lfnfH6Zkt0JgSKe0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273364073286-ch01ov4vromu2s05a5sbiip77rp2071t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "273364073286-15eqons3p41oicrvd7nm5ubo6bubsccd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dotcoder.greenTaxi"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273364073286:android:a06a83254f4754c635c347",
+        "android_client_info": {
+          "package_name": "com.example.carpool_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273364073286-ch01ov4vromu2s05a5sbiip77rp2071t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWqeXTDh8ANrGorI7lfnfH6Zkt0JgSKe0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273364073286-ch01ov4vromu2s05a5sbiip77rp2071t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "273364073286-15eqons3p41oicrvd7nm5ubo6bubsccd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dotcoder.greenTaxi"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273364073286:android:c263f372bdc6a6e735c347",
+        "android_client_info": {
+          "package_name": "com.example.jomshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273364073286-ch01ov4vromu2s05a5sbiip77rp2071t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWqeXTDh8ANrGorI7lfnfH6Zkt0JgSKe0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273364073286-ch01ov4vromu2s05a5sbiip77rp2071t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "273364073286-15eqons3p41oicrvd7nm5ubo6bubsccd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dotcoder.greenTaxi"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273364073286:android:3d2b90bfc144b13435c347",
+        "android_client_info": {
+          "package_name": "com.example.uagrm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273364073286-q2jv0cj8kds59ediadfktp732f51dsop.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.uagrm",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "273364073286-ch01ov4vromu2s05a5sbiip77rp2071t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWqeXTDh8ANrGorI7lfnfH6Zkt0JgSKe0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273364073286-ch01ov4vromu2s05a5sbiip77rp2071t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "273364073286-15eqons3p41oicrvd7nm5ubo6bubsccd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dotcoder.greenTaxi"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273364073286:android:3cf0a656c986828d35c347",
+        "android_client_info": {
+          "package_name": "com.flutterflow.courts"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273364073286-ch01ov4vromu2s05a5sbiip77rp2071t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWqeXTDh8ANrGorI7lfnfH6Zkt0JgSKe0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273364073286-ch01ov4vromu2s05a5sbiip77rp2071t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "273364073286-15eqons3p41oicrvd7nm5ubo6bubsccd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dotcoder.greenTaxi"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273364073286:android:d13dd238af8a9be135c347",
+        "android_client_info": {
+          "package_name": "com.flutterflow.edriveapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273364073286-ch01ov4vromu2s05a5sbiip77rp2071t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWqeXTDh8ANrGorI7lfnfH6Zkt0JgSKe0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273364073286-ch01ov4vromu2s05a5sbiip77rp2071t.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "273364073286-15eqons3p41oicrvd7nm5ubo6bubsccd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dotcoder.greenTaxi"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
